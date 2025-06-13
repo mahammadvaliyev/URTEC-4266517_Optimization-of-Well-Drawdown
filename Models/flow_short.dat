@@ -1,0 +1,666 @@
+** 2022-07-29, 8:54:50 AM, Mahammad
+** 2022-07-29, 6:06:30 PM, Mahammad
+** 2022-07-29, 6:09:30 PM, Mahammad
+** 2022-07-29, 8:36:27 PM, Mahammad
+** 2022-07-29, 8:56:14 PM, Mahammad
+** 2022-07-29, 9:40:40 PM, Mahammad
+** 2022-08-03, 6:46:39 PM, Mahammad
+** 2022-08-04, 2:59:56 PM, Mahammad
+** 2022-10-15, 10:06:44 AM, Mahammad
+** 2022-10-15, 10:22:27 AM, Mahammad
+** 2022-10-15, 7:22:36 PM, Mahammad
+** 2022-10-15, 7:28:53 PM, Mahammad
+** 2022-10-15, 7:29:50 PM, Mahammad
+** 2022-10-16, 1:22:06 PM, Mahammad
+** 2023-03-09, 8:49:47 AM, Mahammad
+** 2023-03-09, 9:11:35 AM, Mahammad
+** 2023-03-16, 12:42:33 PM, Mahammad
+** 2023-03-16, 2:56:57 PM, Mahammad
+RESULTS SIMULATOR IMEX 202210
+
+
+
+
+
+TITLE1 'IMEX_Single_por_GPERMLC'
+INUNIT FIELD
+INTERRUPT RESTART-STOP
+WSRF WELL 1
+WSRF GRID 1
+
+
+
+OUTSRF WELL LAYER NONE
+OUTSRF RES NONE  **identifies what information is written to the Simulation Results file
+OUTSRF GRID PERM  POROS PRES    
+             STRESI  STRESJ STRESK STRESMNP STRESMXP    
+             SW TSTRESI TSTRESJ TSTRESK       
+                PRES SG SO SW  
+
+WPRN GRID 0
+OUTPRN GRID NONE
+OUTPRN RES NONE
+** ***************************************************************************
+** Definition of fundamental cartesian grid
+** ***************************************************************************
+GRID VARI 47 49 9
+KDIR DOWN
+DI IVAR 
+ 47*40
+DJ JVAR 
+ 49*20
+DK ALL 
+ 20727*10
+DTOP  
+ 2303*12000
+
+
+**  0 = null block, 1 = active block
+NULL CON            1
+*PLNRFRAC_TEMPLATE 'Planar Template'
+   *PLNR_REFINE *INTO  3 3 1
+   *BWHLEN 400
+   *JDIR
+   *INNERWIDTH 1
+   *WF1 0.01
+   *K_CENT 50000
+   *LAYERSUP 3
+   *LAYERSDOWN 3
+   *PERMJ MATRIX *NFZ 0.5
+   *PERMI MATRIX *NFZ 0.5
+   *PERMK MATRIX *NFZ 0.5
+   *SWINIT MATRIX *NFZ 0.1
+   *SWINIT MATRIX *FZ 0.1
+   *POR MATRIX *NFZ 0.3
+   *POR MATRIX *FZ 0.8
+*END_TEMPLATE
+RESULTS PLNRSTAGE NAME 'Planar Stage 1'
+RESULTS PLNRSTAGE WELL 'Producer1'
+RESULTS PLNRSTAGE DATE 2022-09-01
+RESULTS PLNRSTAGE BASENAME 'Producer1 - Frac'
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_1' 'Producer1 - Frac_2' 'Producer1 - Frac_3' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_4' 'Producer1 - Frac_5' 'Producer1 - Frac_6' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_7' 'Producer1 - Frac_8' 'Producer1 - Frac_9' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_10' 'Producer1 - Frac_11' 'Producer1 - Frac_12' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_13' 'Producer1 - Frac_14' 'Producer1 - Frac_15' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_16' 'Producer1 - Frac_17' 'Producer1 - Frac_18' 
+RESULTS PLNRSTAGE FRACS 'Producer1 - Frac_19' 'Producer1 - Frac_20' 'Producer1 - Frac_21' 
+RESULTS PLNRSTAGE MINFRACSPACING 0
+RESULTS PLNRSTAGE STARTMD 0
+RESULTS PLNRSTAGE ENDMD 0
+RESULTS PLNRSTAGE PERFOPTION 1
+RESULTS PLNRSTAGE LAYERMIN 5
+RESULTS PLNRSTAGE LAYERMAX 5
+RESULTS PLNRSTAGE END
+*PLNRFRAC 'Planar Template' 4,25,5 *BG_NAME 'Producer1 - Frac_1'
+*PLNRFRAC 'Planar Template' 6,25,5 *BG_NAME 'Producer1 - Frac_2'
+*PLNRFRAC 'Planar Template' 8,25,5 *BG_NAME 'Producer1 - Frac_3'
+*PLNRFRAC 'Planar Template' 10,25,5 *BG_NAME 'Producer1 - Frac_4'
+*PLNRFRAC 'Planar Template' 12,25,5 *BG_NAME 'Producer1 - Frac_5'
+*PLNRFRAC 'Planar Template' 14,25,5 *BG_NAME 'Producer1 - Frac_6'
+*PLNRFRAC 'Planar Template' 16,25,5 *BG_NAME 'Producer1 - Frac_7'
+*PLNRFRAC 'Planar Template' 18,25,5 *BG_NAME 'Producer1 - Frac_8'
+*PLNRFRAC 'Planar Template' 20,25,5 *BG_NAME 'Producer1 - Frac_9'
+*PLNRFRAC 'Planar Template' 22,25,5 *BG_NAME 'Producer1 - Frac_10'
+*PLNRFRAC 'Planar Template' 24,25,5 *BG_NAME 'Producer1 - Frac_11'
+*PLNRFRAC 'Planar Template' 26,25,5 *BG_NAME 'Producer1 - Frac_12'
+*PLNRFRAC 'Planar Template' 28,25,5 *BG_NAME 'Producer1 - Frac_13'
+*PLNRFRAC 'Planar Template' 30,25,5 *BG_NAME 'Producer1 - Frac_14'
+*PLNRFRAC 'Planar Template' 32,25,5 *BG_NAME 'Producer1 - Frac_15'
+*PLNRFRAC 'Planar Template' 34,25,5 *BG_NAME 'Producer1 - Frac_16'
+*PLNRFRAC 'Planar Template' 36,25,5 *BG_NAME 'Producer1 - Frac_17'
+*PLNRFRAC 'Planar Template' 38,25,5 *BG_NAME 'Producer1 - Frac_18'
+*PLNRFRAC 'Planar Template' 40,25,5 *BG_NAME 'Producer1 - Frac_19'
+*PLNRFRAC 'Planar Template' 42,25,5 *BG_NAME 'Producer1 - Frac_20'
+*PLNRFRAC 'Planar Template' 44,25,5 *BG_NAME 'Producer1 - Frac_21'
+*NFZG-ALIGN ON
+PERMI CON       250E-06
+PERMJ CON       250E-06
+PERMK CON       25E-06
+POR CON         0.1
+**  0 = pinched block, 1 = active block
+PINCHOUTARRAY CON            1
+
+
+PRPOR MATRIX 14.7
+
+CPOR MATRIX 1e-6
+
+CROCKTYPE 1
+CPRPOR 14.7
+CCPOR 1e-6
+
+
+
+MODEL BLACKOIL 
+TRES 273
+** pressure,  solution       oil      gas        oil         gas
+**   psia      GOR(2)       FVF(1)   FVF(3)     vis,cp      vis,cp
+** -----------------------------------------------------------------
+PVT BG 1
+
+**$         p           Rs        Bo        Bg      viso      visg
+           50            0    1.0813   0.07063    0.8714    0.0104
+          100       6.4673    1.0889   0.03504    0.8369   0.01128
+          200      32.8805    1.1091   0.01737     0.799   0.01218
+          300       59.072    1.1273    0.0115    0.7733   0.01269
+          500     109.8808    1.1609    0.0068    0.7284   0.01332
+         1000     239.1695    1.2418    0.0033    0.6289    0.0145
+         2000      538.546      1.42   0.00159    0.4651   0.01795
+         3000     932.7172    1.6481   0.00107    0.3408   0.02492
+      3029.37     946.5161    1.6561   0.00106    0.3376   0.02521
+         4000    1402.4672    1.9197   0.00087    0.2463    0.0374
+         5000    1872.2173    2.1912   0.00075    0.1752    0.0554
+         6000    2341.9674    2.4628   0.00068    0.1198   0.07892
+         7000    2811.7174    2.7343   0.00064    0.0754   0.10796
+         8000    3281.4675    3.0059    0.0006     0.039    0.1425
+         9000  3776.748522    3.2775   0.00057    0.0086   0.18257
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+           50    1.0813
+          100    1.0804
+          200    1.0787
+          300    1.0771
+          500    1.0739
+         1000    1.0666
+         2000    1.0541
+         3000    1.0439
+      3029.37    1.0436
+         4000    1.0353
+         5000     1.028
+         6000    1.0216
+         7000    1.0159
+         8000    1.0109
+         9000    1.0065
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+          100    1.0889
+          200     1.087
+          300    1.0853
+          500    1.0818
+         1000     1.074
+         2000    1.0607
+         3000    1.0498
+      3029.37    1.0495
+         4000    1.0407
+         5000    1.0329
+         6000    1.0262
+         7000    1.0203
+         8000     1.015
+         9000    1.0103
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+          200    1.1091
+          300    1.1072
+          500    1.1034
+         1000    1.0948
+         2000    1.0803
+         3000    1.0685
+      3029.37    1.0681
+         4000    1.0586
+         5000    1.0502
+         6000     1.043
+         7000    1.0366
+         8000     1.031
+         9000    1.0259
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+          300    1.1273
+          500    1.1232
+         1000    1.1139
+         2000    1.0984
+         3000    1.0858
+      3029.37    1.0854
+         4000    1.0753
+         5000    1.0664
+         6000    1.0587
+         7000     1.052
+         8000     1.046
+         9000    1.0407
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+          500    1.1609
+         1000    1.1502
+         2000    1.1325
+         3000    1.1183
+      3029.37    1.1179
+         4000    1.1066
+         5000    1.0966
+         6000    1.0881
+         7000    1.0807
+         8000    1.0741
+         9000    1.0683
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+         1000    1.2418
+         2000    1.2178
+         3000     1.199
+      3029.37    1.1985
+         4000    1.1837
+         5000    1.1709
+         6000    1.1601
+         7000    1.1507
+         8000    1.1425
+         9000    1.1352
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+         2000      1.42
+         3000    1.3869
+      3029.37     1.386
+         4000    1.3612
+         5000    1.3404
+         6000    1.3232
+         7000    1.3086
+         8000    1.2959
+         9000    1.2849
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+         3000    1.6481
+      3029.37    1.6466
+         4000    1.6034
+         5000    1.5687
+         6000    1.5408
+         7000    1.5177
+         8000     1.498
+         9000    1.4811
+** pressure      oil
+**   psia        FVF
+** -----------------------
+BOT 1
+**$         p        Bo
+      3029.37    1.6561
+         4000    1.6121
+         5000    1.5769
+         6000    1.5486
+         7000    1.5251
+         8000    1.5052
+         9000    1.4881
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+           50    0.8714
+          100    0.8773
+          200    0.8891
+          300    0.9008
+          500    0.9238
+         1000    0.9799
+         2000    1.0863
+         3000    1.1857
+      3029.37    1.1885
+         4000    1.2789
+         5000    1.3667
+         6000    1.4496
+         7000     1.528
+         8000    1.6023
+         9000    1.6728
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+          100    0.8369
+          200    0.8488
+          300    0.8605
+          500    0.8837
+         1000    0.9403
+         2000    1.0476
+         3000     1.148
+      3029.37    1.1509
+         4000    1.2425
+         5000    1.3316
+         6000    1.4158
+         7000    1.4956
+         8000    1.5713
+         9000    1.6433
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+          200     0.799
+          300    0.8108
+          500     0.834
+         1000    0.8907
+         2000    0.9983
+         3000    1.0993
+      3029.37    1.1022
+         4000    1.1945
+         5000    1.2844
+         6000    1.3696
+         7000    1.4505
+         8000    1.5273
+         9000    1.6005
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+          300    0.7733
+          500    0.7965
+         1000     0.853
+         2000    0.9607
+         3000    1.0618
+      3029.37    1.0647
+         4000    1.1573
+         5000    1.2477
+         6000    1.3334
+         7000    1.4149
+         8000    1.4924
+         9000    1.5663
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+          500    0.7284
+         1000    0.7845
+         2000    0.8916
+         3000    0.9925
+      3029.37    0.9954
+         4000     1.088
+         5000    1.1787
+         6000     1.265
+         7000    1.3472
+         8000    1.4256
+         9000    1.5005
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+         1000    0.6289
+         2000    0.7318
+         3000    0.8296
+      3029.37    0.8324
+         4000    0.9229
+         5000    1.0121
+         6000    1.0975
+         7000    1.1794
+         8000     1.258
+         9000    1.3335
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+         2000    0.4651
+         3000    0.5496
+      3029.37    0.5521
+         4000    0.6316
+         5000    0.7112
+         6000    0.7886
+         7000    0.8638
+         8000    0.9369
+         9000    1.0079
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+         3000    0.3408
+      3029.37    0.3428
+         4000    0.4067
+         5000    0.4719
+         6000    0.5363
+         7000       0.6
+         8000    0.6627
+         9000    0.7245
+** pressure      oil
+**   psia        vis,cp
+** -----------------------
+VOT 1
+**$         p      viso
+      3029.37    0.3376
+         4000     0.401
+         5000    0.4658
+         6000    0.5298
+         7000     0.593
+         8000    0.6554
+         9000    0.7169
+
+BWI 1.0478
+CVW 0
+PTYPE CON            1
+CW 3.354e-006
+
+DENSITY OIL 50.4423
+DENSITY WATER 59.5554
+** Water phase properties
+** ----------------------
+REFPW 8000
+VWI 0.2107
+DENSITY GAS 0.07206
+
+
+ROCKFLUID
+NONDARCY GENERAL 0.5
+1.485e+09 1.021 0 10000 
+1.485e+09 1.021 0 10000 
+1.485e+09 1.021 0 10000 
+
+RPT 1
+**$        Sw         krw      krow
+SWT
+          0.2           0       0.8
+       0.2375  0.00195313  0.703125
+        0.275   0.0078125    0.6125
+       0.3125   0.0175781  0.528125
+         0.35     0.03125      0.45
+       0.3875   0.0488281  0.378125
+        0.425   0.0703125    0.3125
+       0.4625   0.0957031  0.253125
+          0.5       0.125       0.2
+       0.5375    0.158203  0.153125
+        0.575    0.195313    0.1125
+       0.6125    0.236328  0.078125
+         0.65     0.28125      0.05
+       0.6875    0.330078  0.028125
+        0.725    0.382813    0.0125
+      0.7625    0.439453  0.003125
+          0.8         0.5         0
+**$        Sl         krg      krog
+SLT
+         0.25         0.9         0
+      0.29375    0.791016  0.003125
+       0.3375    0.689063    0.0125
+      0.38125    0.594141  0.028125
+        0.425     0.50625      0.05
+      0.46875    0.425391  0.078125
+       0.5125    0.351563    0.1125
+      0.55625    0.284766  0.153125
+          0.6       0.225       0.2
+      0.64375    0.172266  0.253125
+       0.6875    0.126562    0.3125
+      0.73125   0.0878906  0.378125
+        0.775     0.05625      0.45
+      0.81875   0.0316406  0.528125
+       0.8625   0.0140625    0.6125
+      0.90625  0.00351563  0.703125
+         0.95           0       0.8
+
+RPT 2
+** sw         krw   krow  
+**$        Sw       krw      krow
+SWT
+          0.1         0         1
+         0.15    0.0625    0.9375
+          0.2     0.125     0.875
+         0.25    0.1875    0.8125
+          0.3      0.25      0.75
+         0.35    0.3125    0.6875
+          0.4     0.375     0.625
+         0.45    0.4375    0.5625
+          0.5       0.5       0.5
+         0.55    0.5625    0.4375
+          0.6     0.625     0.375
+         0.65    0.6875    0.3125
+          0.7      0.75      0.25
+         0.75    0.8125    0.1875
+          0.8     0.875     0.125
+         0.85    0.9375    0.0625
+          0.9         1         0
+**  sl     krg        krog 
+**$        Sl         krg        krog
+**$        Sg       krg      krog
+SGT
+         0.05         0         1
+          0.1    0.0625    0.9375
+         0.15     0.125     0.875
+          0.2    0.1875    0.8125
+         0.25      0.25      0.75
+          0.3    0.3125    0.6875
+         0.35     0.375     0.625
+          0.4    0.4375    0.5625
+         0.45       0.5       0.5
+          0.5    0.5625    0.4375
+         0.55     0.625     0.375
+          0.6    0.6875    0.3125
+         0.65      0.75      0.25
+          0.7    0.8125    0.1875
+         0.75     0.875     0.125
+          0.8    0.9375    0.0625
+         0.85         1         0
+RTYPE CON            1
+NDARCYCOR CON            0
+
+INITIAL
+VERTICAL DEPTH_AVE WATER_OIL_GAS EQUIL
+
+REFDEPTH 12000
+REFPRES 6000
+DWOC 12180
+DGOC 11000
+GOC_PC 0
+WOC_PC 0
+PB  CON         5000
+SWINIT CON          0.1
+
+
+
+
+NUMERICAL
+
+AUTOTUNE ON
+
+
+
+RUN
+
+
+
+
+DATE 2022 1 01
+
+WELL  'Producer1'
+PRODUCER 'Producer1'
+*INCLUDE well_bhp1.IN
+**          rad  geofac  wfrac  skin
+GEOMETRY  I  0.125  0.432  1.0  0.0  
+      PERF       GEO  'Producer1'
+** UBA                            ff          Status  Connection  
+    4 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  'SURFACE'  REFLAYER
+    5 25 5 MT                   1.0  OPEN    FLOW-TO  1
+    6 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  2
+    7 25 5 MT                   1.0  OPEN    FLOW-TO  3
+    8 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  4
+    9 25 5 MT                   1.0  OPEN    FLOW-TO  5
+    10 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  6
+    11 25 5 MT                   1.0  OPEN    FLOW-TO  7
+    12 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  8
+    13 25 5 MT                   1.0  OPEN    FLOW-TO  9
+    14 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  10
+    15 25 5 MT                   1.0  OPEN    FLOW-TO  11
+    16 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  12
+    17 25 5 MT                   1.0  OPEN    FLOW-TO  13
+    18 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  14
+    19 25 5 MT                   1.0  OPEN    FLOW-TO  15
+    20 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  16
+    21 25 5 MT                   1.0  OPEN    FLOW-TO  17
+    22 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  18
+    23 25 5 MT                   1.0  OPEN    FLOW-TO  19
+    24 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  20
+    25 25 5 MT                   1.0  OPEN    FLOW-TO  21
+    26 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  22
+    27 25 5 MT                   1.0  OPEN    FLOW-TO  23
+    28 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  24
+    29 25 5 MT                   1.0  OPEN    FLOW-TO  25
+    30 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  26
+    31 25 5 MT                   1.0  OPEN    FLOW-TO  27
+    32 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  28
+    33 25 5 MT                   1.0  OPEN    FLOW-TO  29
+    34 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  30
+    35 25 5 MT                   1.0  OPEN    FLOW-TO  31
+    36 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  32
+    37 25 5 MT                   1.0  OPEN    FLOW-TO  33
+    38 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  34
+    39 25 5 MT                   1.0  OPEN    FLOW-TO  35
+    40 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  36
+    41 25 5 MT                   1.0  OPEN    FLOW-TO  37
+    42 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  38
+    43 25 5 MT                   1.0  OPEN    FLOW-TO  39
+    44 25 5 / 2 2 1 MT           1.0  OPEN    FLOW-TO  40
+
+** -----------------------
+
+DATE 2022 1 16
+PRODUCER 'Producer1'
+*INCLUDE well_bhp2.IN
+
+DATE 2022 1 31
+PRODUCER 'Producer1'
+*INCLUDE well_bhp3.IN
+
+DATE 2022 3 2
+PRODUCER 'Producer1'
+*INCLUDE well_bhp4.IN
+
+DATE 2022 4 1
+PRODUCER 'Producer1'
+*INCLUDE well_bhp5.IN
+
+DATE 2022 5 31
+PRODUCER 'Producer1'
+*INCLUDE well_bhp6.IN
+
+DATE 2022 7 30
+PRODUCER 'Producer1'
+*INCLUDE well_bhp7.IN
+
+DATE 2022 10 28
+PRODUCER 'Producer1'
+*INCLUDE well_bhp8.IN
+
+DATE 2023 1 26
+PRODUCER 'Producer1'
+*INCLUDE well_bhp9.IN
+
+DATE 2023 5 26
+
+STOP
+
