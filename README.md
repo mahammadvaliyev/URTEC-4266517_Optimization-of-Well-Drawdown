@@ -10,18 +10,21 @@ Optimizing well drawdown strategies is important for maximizing oil recovery fro
 
 ## 💡 Motivation
 
-![image](https://github.com/user-attachments/assets/6b694ce3-db4d-4f38-84ef-ce357111954b)
+![image](https://github.com/user-attachments/assets/2bd85d8c-f111-473a-b55f-36c4d1db26d1)
+
+![image](https://github.com/user-attachments/assets/40733405-a532-47ef-acc0-69b67fc6f5fe)
 
 
-![image](https://github.com/user-attachments/assets/30198e96-5d2f-4733-b75a-48d475e61517)
 
 ## 🛠️ Modeling Approach
 
-![image](https://github.com/user-attachments/assets/31e67220-ec02-44d6-affa-453cc47480b3)
+![image](https://github.com/user-attachments/assets/00ce8900-c0d0-408d-af01-9a81ee97bc7e)
 
 
-## Workflow
-![image](https://github.com/user-attachments/assets/73142908-ba71-40b1-9de8-34a3d068e055)
+
+## ⚙️ Workflow
+![image](https://github.com/user-attachments/assets/515a0544-0f7a-4804-8ad0-e02f47587ce6)
+
 
 
 
